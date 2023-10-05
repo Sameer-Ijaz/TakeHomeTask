@@ -5,7 +5,7 @@ export default function SeparatorLine() {
     return (
         <View style={styles.lineContainer}>
             <View style={styles.line} />
-            <Text style={styles.text}>OR</Text>
+            <Text style={styles.text}>or</Text>
             <View style={styles.line} />
         </View>
     );
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
     },
     text: {
-        fontSize: 16,
+        fontSize: 12,
         color: '#474658',
     },
 });

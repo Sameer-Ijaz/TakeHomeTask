@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View, Dimensions } from 'react-native'
+import { StyleSheet, Text, View, Dimensions, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { TextInput } from 'react-native-paper'
 import CustomButton from '../components/CustomButton'
 import SeparatorLine from '../components/Line'
+import { MaterialIcons } from '@expo/vector-icons';
 
-export default function Login() {
+export default function Login({ navigation }) {
     let login = [{ text: 'Signup with Phone', icon: 'telephone' },
     { text: 'Signup with Apple ID', icon: 'social-apple' },
     { text: 'Signup with Google', icon: 'social-google-plus' },
@@ -12,6 +13,14 @@ export default function Login() {
     ]
     return (
         <View style={{ alignItems: 'center', justifyContent: 'center', backgroundColor: 'white', flex: 1 }}>
+            <View style={{ position: 'absolute', top: 40, left: 20, flexDirection: 'row', alignItems: 'center', }}>
+                <TouchableOpacity onPress={() => {
+                    navigation.goBack()
+                }}>
+                    <MaterialIcons name="arrow-back" size={24} color="#474658" />
+                </TouchableOpacity>
+                <Text style={{ marginLeft: 8, fontSize: 16, fontWeight: 500, color: '#474658' }}>Back</Text>
+            </View>
             <TextInput
                 mode='flat'
                 outlineColor={'white'}

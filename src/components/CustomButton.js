@@ -19,7 +19,7 @@ export default function CustomButton({ onPress, btnText, style, textStyle, icon 
                 <Text
                     style={[
                         styles.btnText,
-                        hasIcon ? { color: 'black' } : {},
+                        hasIcon ? { color: '#474658' } : {},
                         textStyle
                     ]}
                 >
@@ -43,7 +43,8 @@ const styles = StyleSheet.create({
     btnText: {
         textAlign: 'center',
         color: 'white',
-        fontSize: 18,
+        fontWeight: 600,
+        fontSize: 14,
     },
     icon: {
         position: 'absolute',
