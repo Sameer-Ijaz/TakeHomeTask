@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import CustomButton from '../components/CustomButton'
 
-export default function Home() {
+export default function Home({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={styles.innerContainer}>
@@ -16,8 +16,9 @@ export default function Home() {
             </View>
 
             <View style={styles.buttonContainer}>
-                <CustomButton btnText={'Create new Account'} />
-                <CustomButton textStyle={{ color: 'black' }} style={styles.btnStyle} btnText={'Login'} />
+                <CustomButton onPress={() => navigation.navigate('Login')} btnText={'Create new Account'} />
+                <CustomButton onPress={() => navigation.navigate('Login')} textStyle={{ color: 'black' }}
+                    style={styles.btnStyle} btnText={'Login'} />
             </View>
         </View>
     )
