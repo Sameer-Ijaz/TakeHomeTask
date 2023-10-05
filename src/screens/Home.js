@@ -1,11 +1,30 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, Image, Switch } from 'react-native'
+import React, { useContext, useState } from 'react'
 import CustomButton from '../components/CustomButton'
+import { Button } from 'react-native'
+import { ThemeContext } from '../context/Theme'
+import { ToggleButton } from 'react-native-paper'
+
+
 
 export default function Home({ navigation }) {
+    const { toggleTheme } = useContext(ThemeContext);
+    const { isDark } = useContext(ThemeContext);
+    const [isEnabled, setIsEnabled] = useState(false);
+    const toggleSwitch = () => {
+        setIsEnabled(previousState => !previousState)
+        toggleTheme()
+    };
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, isDark && styles.darkContainer]}>
             <View style={styles.innerContainer}>
+                <Switch
+                    trackColor={{ false: '#767577', true: '#81b0ff' }}
+                    thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+                    ios_backgroundColor="#3e3e3e"
+                    onValueChange={toggleSwitch}
+                    value={isEnabled}
+                />
                 <Image
                     resizeMode='contain'
                     source={require('../../assets/logo.png')}
@@ -48,5 +67,8 @@ const styles = StyleSheet.create({
     },
     imgStyle: {
         height: 250, width: 250
+    },
+    darkContainer: {
+        backgroundColor: 'black',
     }
 })
