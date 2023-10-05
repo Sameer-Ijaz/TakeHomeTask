@@ -16,16 +16,16 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         marginHorizontal: 16,
-        marginVertical: 12// Add some vertical margin for visual spacing
+        marginVertical: 42
     },
     line: {
-        flex: 1, // Takes up equal amount of space on both sides
+        flex: 1,
         height: 1,
-        backgroundColor: 'grey', // Adjust color as needed
-        marginHorizontal: 10, // Some space between the line and the "OR" text
+        backgroundColor: '#474658',
+        marginHorizontal: 10,
     },
     text: {
         fontSize: 16,
-        color: 'grey', // Adjust color as needed
+        color: '#474658',
     },
 });

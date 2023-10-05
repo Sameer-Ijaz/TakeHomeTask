@@ -5,10 +5,13 @@ import CustomButton from '../components/CustomButton'
 import SeparatorLine from '../components/Line'
 
 export default function Login() {
+    let login = [{ text: 'Signup with Phone', icon: 'telephone' },
+    { text: 'Signup with Apple ID', icon: 'social-apple' },
+    { text: 'Signup with Google', icon: 'social-google-plus' },
+    { text: 'Signup with Facebook', icon: 'social-facebook' }
+    ]
     return (
         <View style={{ alignItems: 'center', justifyContent: 'center', backgroundColor: 'white', flex: 1 }}>
-
-
             <TextInput
                 mode='flat'
                 outlineColor={'white'}
@@ -19,12 +22,12 @@ export default function Login() {
                 selectionColor={'#0F46EA'}
                 returnKeyLabel={'Done'}
             />
-            <CustomButton style={{ marginBottom: 32 }} btnText={'Continue'} />
+            <CustomButton btnText={'Continue'} />
             <SeparatorLine />
-            <CustomButton icon='telephone' btnText={'Continue'} />
-            <CustomButton icon='social-apple' btnText={'Continue'} />
-            <CustomButton icon='social-google-plus' btnText={'Continue'} />
-            <CustomButton icon='social-facebook' btnText={'Continue'} />
+
+            {login.map((item, index) => (
+                <CustomButton key={index} icon={item.icon} btnText={item.text} />
+            ))}
 
         </View>
 
