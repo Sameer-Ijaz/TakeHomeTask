@@ -30,7 +30,7 @@ export default function Home({ navigation }) {
                     source={require('../../assets/logo.png')}
                     style={styles.imgStyle}
                 />
-                <Text style={styles.txtStyle}>Welcome to KnowMe</Text>
+                <Text style={[styles.txtStyle, isDark && { color: 'white' }]}>Welcome to KnowMe</Text>
                 <Text style={styles.subText}>Contacts - simple & secure</Text>
             </View>
 

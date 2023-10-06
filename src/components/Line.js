@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function SeparatorLine() {
+export default function SeparatorLine({ isDark }) {
     return (
         <View style={styles.lineContainer}>
-            <View style={styles.line} />
-            <Text style={styles.text}>or</Text>
-            <View style={styles.line} />
+            <View style={[styles.line, isDark && { backgroundColor: 'white' }]} />
+            <Text style={[styles.text, isDark && { color: 'white' }]}>or</Text>
+            <View style={[styles.line, isDark && { backgroundColor: 'white' }]} />
         </View>
     );
 }
