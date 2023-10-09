@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './src/screens/Home';
 import Login from './src/screens/Login';
 import { ThemeProvider, ThemeContext } from './src/context/Theme';  // Adjust the path
+import Data from './src/screens/Data';
 
 export default function App() {
 
@@ -23,8 +24,8 @@ function WrapperComponent() {
   return (
     <NavigationContainer theme={theme}>
       <Stack.Navigator>
-        <Stack.Screen options={{ headerShown: false }} name="Home" component={Home} />
-        <Stack.Screen options={{ headerShown: false }} name="Login" component={Login} />
+        <Stack.Screen options={{ headerShown: false }} name="Home" component={Data} />
+        {/* <Stack.Screen options={{ headerShown: false }} name="Login" component={Login} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
